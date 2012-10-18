@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
+	<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:background="@drawable/splash_background"
+	android:paddingTop="10dp"
+	android:paddingBottom="5dp"
+	android:layout_marginRight="5dp"
+	android:layout_marginLeft="5dp"
+	android:layout_centerVertical="true"
+	android:layout_height="wrap_content">
+    <ImageView
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/icon"
+    android:layout_gravity="center"
+    android:layout_marginBottom="5dp"
+    />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name_version"
+    android:layout_gravity="center"
+    android:textStyle="bold"
+    android:textSize="18sp"
+    android:textColor="#333"
+    ></TextView>
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_copyright"
+    android:layout_gravity="center"
+    android:textSize="16sp"
+    android:textColor="#555"
+    ></TextView>
+    </LinearLayout>
+    <LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/aa"
+	android:layout_alignParentBottom="true"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content">
+	<ProgressBar
+	android:id="@+id/progg"
+	android:layout_width="40dp"
+	android:layout_height="40dp"
+	android:layout_gravity="center"
+	android:layout_marginBottom="15dp"
+	style="?android:attr/progressBarStyleLarge"
+    />
+    <TextView
+    android:id="@+id/state"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Now Loading ..."
+    android:textSize="14sp"
+    android:layout_marginBottom="15dp"
+    android:layout_gravity="center"
+    ></TextView>
+    </LinearLayout>
+</RelativeLayout>

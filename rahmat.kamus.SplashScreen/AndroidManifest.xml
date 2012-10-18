@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="rahmat.kamus"
+      android:versionCode="2" android:versionName="@string/app_version">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".SplashScreen"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+<activity android:name=".MainActivity" android:configChanges="orientation" android:theme="@android:style/Theme.NoTitleBar"></activity>
+<activity android:name=".SearchActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
+<activity android:name=".TranslateActivity" android:configChanges="orientation" android:theme="@android:style/Theme.Dialog">
+<intent-filter>
+	<data android:scheme="kamus" android:host="translate"/>
+	<action android:name="android.intent.action.VIEW" />
+	<category android:name="android.intent.category.DEFAULT" />
+	<category android:name="android.intent.category.BROWSABLE" />
+	</intent-filter>
+</activity>
+<activity android:name=".SettingActivity" android:label="Setting" android:theme="@android:style/Theme.Dialog"></activity>
+</application>
+    <uses-sdk android:minSdkVersion="4" />
+</manifest>

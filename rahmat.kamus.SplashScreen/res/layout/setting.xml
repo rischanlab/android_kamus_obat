@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+	android:title="Search Preference :">
+		<ListPreference
+			android:title="Result Limit"
+ 			android:key="search_limit"
+			android:defaultValue="15"
+			android:entries="@array/max_result_setting_item"
+			android:entryValues="@array/max_result_setting_value"
+		/>
+	</PreferenceCategory>
+	<PreferenceCategory
+	android:title="Reader Preference :">
+		<CheckBoxPreference
+			android:title="Autolink Text"
+			android:defaultValue="true"
+			android:key="autolink"
+		/>
+		<ListPreference
+			android:title="Font Size"
+ 			android:key="font_size"
+			android:defaultValue="18"
+			android:entries="@array/font_size_item"
+			android:entryValues="@array/font_size_value"
+		/>
+	</PreferenceCategory>
+</PreferenceScreen>
