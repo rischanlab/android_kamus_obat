@@ -32,11 +32,7 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec spec;  // Resusable TabSpec for each tab
         Intent intent;  // Reusable Intent for each tab
         
-        // All
-        //intent = new Intent().setClass(this, SearchActivity.class);
-        //intent.putExtra("DICT", 1);
-        //spec = tabHost.newTabSpec("all").setIndicator(tab_menu[0], res.getDrawable(R.drawable.tab_style)).setContent(intent);
-        //tabHost.addTab(spec);
+       
         
        
         intent = new Intent().setClass(this, SearchActivity.class);
@@ -80,12 +76,11 @@ public class MainActivity extends TabActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
       case R.id.setting:
-    	  /**
+    	
     	  Intent settingsActivity = new Intent(this.getBaseContext(), SettingActivity.class);
     	  startActivity(settingsActivity);
     	  break;
-    	  **/
-    	  break;
+    	 
       case R.id.about:
     	  aboutDialog.show();
     	  break;
