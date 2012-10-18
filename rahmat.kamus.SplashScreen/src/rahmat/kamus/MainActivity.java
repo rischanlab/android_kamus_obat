@@ -19,10 +19,8 @@ public class MainActivity extends TabActivity {
 	private AlertDialog.Builder builder;
 	private AlertDialog aboutDialog;
 	final String[] tab_menu = {
-			"All",
 			"Obat ke Penyakit",
-			"Penyakit ke Obat",
-			"Jenis Obat"};
+			"Penyakit ke Obat"};
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,25 +38,19 @@ public class MainActivity extends TabActivity {
         //spec = tabHost.newTabSpec("all").setIndicator(tab_menu[0], res.getDrawable(R.drawable.tab_style)).setContent(intent);
         //tabHost.addTab(spec);
         
-        // English to Indonesian
+       
+        intent = new Intent().setClass(this, SearchActivity.class);
+        intent.putExtra("DICT", 1);
+        spec = tabHost.newTabSpec("en2id").setIndicator(tab_menu[0], res.getDrawable(R.drawable.tab_style)).setContent(intent);
+        tabHost.addTab(spec);
+        
+       
         intent = new Intent().setClass(this, SearchActivity.class);
         intent.putExtra("DICT", 2);
-        spec = tabHost.newTabSpec("en2id").setIndicator(tab_menu[1], res.getDrawable(R.drawable.tab_style)).setContent(intent);
+        spec = tabHost.newTabSpec("id2en").setIndicator(tab_menu[1], res.getDrawable(R.drawable.tab_style)).setContent(intent);
         tabHost.addTab(spec);
         
-        // Indonesian to English
-        intent = new Intent().setClass(this, SearchActivity.class);
-        intent.putExtra("DICT", 3);
-        spec = tabHost.newTabSpec("id2en").setIndicator(tab_menu[2], res.getDrawable(R.drawable.tab_style)).setContent(intent);
-        tabHost.addTab(spec);
-        
-        /**
-        intent = new Intent().setClass(this, SearchActivity.class);
-        intent.putExtra("DICT", 4);
-        spec = tabHost.newTabSpec("kbbi").setIndicator(tab_menu[3], res.getDrawable(R.drawable.tab_style)).setContent(intent);
-        tabHost.addTab(spec);
-        */
-        // Select Default Tab
+      
         tabHost.setCurrentTab(0);
         
         // Create About Dialog

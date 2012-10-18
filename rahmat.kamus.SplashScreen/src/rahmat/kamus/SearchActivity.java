@@ -22,10 +22,10 @@ import android.widget.AdapterView.OnItemClickListener;
 public class SearchActivity extends ListActivity {
 
 	final SearchActivity this_class = this;
-	//final static int ALLDICT = 1;
-	final static int ENG2IND = 2;
-	final static int IND2ENG = 3;
-	//final static int KBBIDICT = 4;
+	
+	final static int ENG2IND = 1;
+	final static int IND2ENG = 2;
+
 	final String arrow = String.format("%c", 0x2192);
 	final String not_found = "No entries found.";
 
@@ -160,13 +160,7 @@ public class SearchActivity extends ListActivity {
 			String query;
 			switch (DICT) {
 			default:
-			//case ALLDICT:
-				//query = "SELECT eng as word FROM english where word LIKE '"
-					//	+ text.replace("'", "''")
-					//	+ "%' UNION SELECT ind as word FROM indonesia where word LIKE '"
-						//+ text.replace("'", "''") + "%' ORDER BY word LIMIT "
-						//+ search_limit;
-				//break;
+			
 			case ENG2IND:
 				query = "SELECT obat FROM obat where obat LIKE '"
 						+ text.replace("'", "''") + "%' ORDER BY obat LIMIT "
@@ -177,13 +171,7 @@ public class SearchActivity extends ListActivity {
 						+ text.replace("'", "''") + "%' ORDER BY penyakit LIMIT "
 						+ search_limit;
 				break;
-				/**
-			case KBBIDICT:
-				query = "SELECT kata FROM kbbi where kata LIKE '"
-						+ text.replace("'", "''") + "%' ORDER BY kata LIMIT "
-						+ search_limit;
-				break;
-				*/
+		
 			}
 			kamusCursor = db.rawQuery(query, null);
 			if (kamusCursor.moveToFirst()) {

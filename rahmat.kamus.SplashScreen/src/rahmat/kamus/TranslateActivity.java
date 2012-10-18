@@ -36,12 +36,12 @@ import android.widget.Toast;
 public class TranslateActivity extends Activity implements
 		TextToSpeech.OnInitListener {
 
-	//final static int ALLDICT = 1;
-	final static int ENG2IND = 2;
-	final static int IND2ENG = 3;
-	final static int KBBIDICT = 4;
+	
+	final static int ENG2IND = 1;
+	final static int IND2ENG = 2;
+	
 	final String[] dict_name = new String[] {  "Obat ke Penyakit",
-			"Penyakit ke Obat", "Jenis Obat" };
+			"Penyakit ke Obat" };
 
 	private int DICT;
 	private String text;
@@ -97,12 +97,7 @@ public class TranslateActivity extends Activity implements
 		String query;
 		switch (DICT) {
 		default:
-		//case ALLDICT:
-			//query = "SELECT ind as word FROM english where lower(eng)=lower('"
-				//+ text.replace("'", "''")
-					//+ "') UNION SELECT eng as word FROM indonesia where lower(ind)=lower('"
-					//+ text.replace("'", "''") + "') LIMIT 1";
-			//break; 
+		
 		case ENG2IND:
 			query = "SELECT penyakit FROM obat where lower(obat)=lower('"
 					+ text.replace("'", "''") + "')";
@@ -110,13 +105,7 @@ public class TranslateActivity extends Activity implements
 		case IND2ENG:
 			query = "SELECT obat FROM penyakit where lower(penyakit)=lower('"
 					+ text.replace("'", "''") + "')";
-			/**
-			break;
-		case KBBIDICT:
-			query = "SELECT arti FROM kbbi where lower(kata)=lower('"
-					+ text.replace("'", "''") + "')";
-			break;
-			**/
+			
 		}
 		kamusCursor = db.rawQuery(query, null);
 		if (!kamusCursor.moveToFirst()) {
@@ -259,8 +248,7 @@ public class TranslateActivity extends Activity implements
 				SpeechStatus = mTts.setLanguage(Locale.US);
 				break;
 			case IND2ENG:
-			case KBBIDICT:
-				SpeechStatus = mTts.setLanguage(Locale.ITALY);
+			
 				break;
 			}
 			if (SpeechStatus == TextToSpeech.LANG_MISSING_DATA
